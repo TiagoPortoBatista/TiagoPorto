@@ -1,0 +1,55 @@
+import { Tabs } from 'expo-router';
+
+import Ionicons from '@expo/vector-icons/Ionicons';
+
+
+export default function TabLayout() {
+  return (
+    <Tabs
+     screenOptions={{
+      tabBarActiveTintColor: 'gold',
+      headerStyle: {
+      backgroundColor: '#134761',
+
+
+    },
+      headerShadowVisible: false,
+      headerTintColor: '#fff',
+      tabBarStyle: {
+      backgroundColor: '#134761',
+    },
+    }}
+    >
+
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: 'Início',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'key-outline' : 'key'} color={color} size={24} />
+          ),
+        }}
+      />
+       <Tabs.Screen
+        name="toDoList"
+        options={{
+          title: 'Lista',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'create-outline' : 'create'} color={color} size={24} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="about"
+        options={{
+          title: 'Opel Manta',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'car-sport-outline' : 'car-sport'} color={color} size={24}/>
+          ),
+        }}
+      />
+    </Tabs>
+  );
+
+  
+}
