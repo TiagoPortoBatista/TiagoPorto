@@ -24,7 +24,7 @@ container: {
   alignItems: "center",
 },
   text: {
-    color: '#fff',
+    color: '#ffff',
     fontSize: 20,
   },
 
