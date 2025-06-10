@@ -48,6 +48,15 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="buscaCep"
+        options={{
+          title: 'CEP',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'train-outline' : 'train'} color={color} size={24}/>
+          ),
+        }}
+      />
     </Tabs>
   );
 
