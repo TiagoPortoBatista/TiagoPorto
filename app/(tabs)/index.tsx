@@ -1,4 +1,4 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, ImageSourcePropType } from "react-native";
 import ImageViewer from '@/components/imageViewer';
 import Button from '@/components/Button';
 import IconButton from '../components/IconButton';
@@ -9,7 +9,7 @@ import EmojiPicker from "../components/EmojiPicker";
 import EmojiList from "../components/EmojiList";
 import EmojiSticker from "../components/EmojiSticker";
 
-const PlaceholderImage = require('@/assets/images/opel.png');
+const PlaceholderImage = require('@/assets/images/mt07.jpg');
 
 export default function Index() {
   const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
@@ -19,7 +19,7 @@ export default function Index() {
 
   const pickImageAsync = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ['images'],
+      mediaTypes: ImagePicker.MediaTypeOptions.Images, // Corrigido: tipo correto
       allowsEditing: true,
       quality: 1,
     });
@@ -34,14 +34,20 @@ export default function Index() {
 
   const onReset = () => {
     setShowAppOptions(false);
+    setPickedEmoji(undefined);
   };
 
   const onAddSticker = () => {
     setIsModalVisible(true);
   };
 
+  const onModalClose = () => {
+    setIsModalVisible(false);
+  };
+
   const onSaveImageAsync = () => {
     setIsModalVisible(false);
+    // Aqui você pode implementar a lógica de salvar imagem
   };
 
   return (
@@ -65,8 +71,9 @@ export default function Index() {
           <Button label="Use essa foto" onPress={() => setShowAppOptions(true)} />
         </View>
       )}
+      
       <EmojiPicker isVisible={isModalVisible} onClose={onModalClose}>
-        <EmojiList onSelect ={setPickedEmoji} onCloseModal={onModalClose} />
+        <EmojiList onSelect={setPickedEmoji} onCloseModal={onModalClose} />
       </EmojiPicker>
     </View>
   );
@@ -75,7 +82,7 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#134761',
+    backgroundColor: '#808080',  // cinza médio
     alignItems: "center",
   },
   imageContainer: {

@@ -1,4 +1,3 @@
-
 import { View, Pressable, StyleSheet } from 'react-native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
@@ -22,7 +21,7 @@ const styles = StyleSheet.create({
     height: 84,
     marginHorizontal: 60,
     borderWidth: 4,
-    borderColor: '#ffd33d',
+    borderColor: '#808080', // cinza médio
     borderRadius: 42,
     padding: 3,
   },

@@ -8,12 +8,12 @@ export default function App() {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.titulo}>Lista dos carros de Rally</Text>
+            <Text style={styles.titulo}>Lista das motos dos sonhos</Text>
 
             <View style={styles.inputContainer}>
                 <TextInput 
                     style={styles.input}
-                    placeholder="Digite um Carro..."
+                    placeholder="Digite uma moto..."
                     value={novaTarefa}
                     onChangeText={setNovaTarefa}
                 />
@@ -42,43 +42,43 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-    container: { flex: 1, padding: 20, backgroundColor: '#134761' },
-    titulo: { fontSize: 24, fontWeight: 'bold', textAlign: 'center', marginBottom: 20, color: '#FFF' },
-    inputContainer: { flexDirection: 'row', marginBottom: 10 },
-    input: { 
-        flex: 1, 
-        borderWidth: 1, 
-        borderColor: 'black', 
-        padding: 10, 
-        borderRadius: 5, 
-        marginRight: 10, 
-        color: 'black', 
-        backgroundColor: 'white'
-    },
-    botao: {
-        backgroundColor: 'gold',
-        padding: 10,
-        borderRadius: 5,
-        alignItems: 'center',
-        justifyContent: 'center',
-        minWidth: 100,
-    },
-    textoBotao: {
-        color: '#134761',
-        fontSize: 16,
-        fontWeight: 'bold',
-    },
-    tarefaContainer: { 
-        flexDirection: 'row', 
-        justifyContent: 'space-between', 
-        backgroundColor: '#134761', 
-        padding: 4, 
-        borderColor: 'white',
-        borderWidth: 2,
-        marginBottom: 5, 
-        borderRadius: 5, 
-        elevation: 2 
-    },
-    tarefaTexto: { fontSize: 16, color: 'white' },
-    remover: { fontSize: 18, color: 'red' },
+  container: { flex: 1, padding: 20, backgroundColor: '#808080' },  // cinza médio
+  titulo: { fontSize: 24, fontWeight: 'bold', textAlign: 'center', marginBottom: 20, color: '#FFF' },
+  inputContainer: { flexDirection: 'row', marginBottom: 10 },
+  input: { 
+    flex: 1, 
+    borderWidth: 1, 
+    borderColor: 'black', 
+    padding: 10, 
+    borderRadius: 5, 
+    marginRight: 10, 
+    color: 'black', 
+    backgroundColor: 'white'
+  },
+  botao: {
+    backgroundColor: '#c0c0c0',  // cinza claro
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+    minWidth: 100,
+  },
+  textoBotao: {
+    color: '#4a4a4a',  // cinza escuro
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  tarefaContainer: { 
+    flexDirection: 'row', 
+    justifyContent: 'space-between', 
+    backgroundColor: '#808080',  // cinza médio
+    padding: 4, 
+    borderColor: 'white',
+    borderWidth: 2,
+    marginBottom: 5, 
+    borderRadius: 5, 
+    elevation: 2 
+  },
+  tarefaTexto: { fontSize: 16, color: 'white' },
+  remover: { fontSize: 18, color: 'red' },
 });

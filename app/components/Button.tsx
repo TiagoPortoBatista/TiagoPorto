@@ -13,12 +13,12 @@ export default function Button({ label, theme, onPress }: Props) {
       <View
         style={[
           styles.buttonContainer,
-          { borderWidth: 4, borderColor: '#ffd33d', borderRadius: 18 },
+          { borderWidth: 4, borderColor: '#808080', borderRadius: 18 }, // cinza médio
         ]}
       >
         <Pressable style={[styles.button, { backgroundColor: '#fff' }]} >
-          <FontAwesome name="picture-o" size={18} color="#25292e" style={styles.buttonIcon} />
-          <Text style={[styles.buttonLabel, { color: '#25292e' }]}>{label}</Text>
+          <FontAwesome name="picture-o" size={18} color="#4a4a4a" style={styles.buttonIcon} /> {/* cinza escuro */}
+          <Text style={[styles.buttonLabel, { color: '#4a4a4a' }]}>{label}</Text> {/* cinza escuro */}
         </Pressable>
       </View>
     );
@@ -50,13 +50,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     borderWidth: 2,
-    borderColor: 'gold',
+    borderColor: '#808080',  // cinza médio
   },
   buttonIcon: {
     paddingRight: 8,
   },
   buttonLabel: {
-    color: 'gold',
+    color: '#808080', // cinza médio
     fontSize: 16,
   },
 });
