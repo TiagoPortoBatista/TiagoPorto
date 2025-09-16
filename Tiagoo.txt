@@ -1,0 +1,80 @@
+public abstract class Veiculo
+{
+   public String modelo;
+  int velocidade;
+  public int max_passageiros;
+  
+  public Veiculo(String modelo, int velocidade,int max_passageiros)
+  {
+  	this.modelo = modelo;
+  	this.velocidade = velocidade;
+  	this.max_passageiros = max_passageiros;
+  }	
+}
+
+
+public class Carro extends Veiculos
+{
+	public int num_portas;
+	public int ano;
+	
+	public Carro(String modelo, int velocidade,int max_passageiros, int num_portas,int ano)
+	{
+	  super(modelo, velocidade, max_passageiros);
+	  this.num_portas = num_portas;
+	  this.ano = ano;
+
+	  	
+	  	
+	} 
+    
+     public void MostrarDados()
+     {
+       System.out.println("Modelo: "+modelo);
+       System.out.println("Ano: "+ano);
+       System.out.println("Portas: "+num_Portas);
+     }
+       /* la.versao do AcertaDados */
+       public void AcertarDados(int num_portas)
+       {
+       	this.num_portas = num_portas;
+       }
+       /* 2a. versao do AcertarDados */
+       public void AcertarDados(String modelo, int ano)
+       {
+       	this.modelo = modelo;
+       	this.ano = ano;
+       }
+
+        /* 3a. versao do AcertarDados */
+       //public void AcertarDados(int ano)
+       {
+       //	this.ano = ano;
+       }
+ }  
+
+
+
+
+public class RodaOverload
+{ 
+  public static void main(String[] args)
+  {
+  	/* Veiculo eh clase abstrata. Nao pode criar */
+   	//Veiculo veic = new Veiculo("Sei la",100,8);
+   	
+   	Veiculo mycar = new Carro("Vw",0,5,3,2025);
+   	mycar.MostrarDados();
+   	
+   	/* Overload 1: alterando o modelo e o ano */
+   	mycar.AcertarDados("Ford",2014);
+   	mycar.MostrarDados();
+  
+   /* Overload 2: alterando o numero de portas */
+   	mycar.AcertarDados(10);
+   	mycar.MostrarDados();
+  
+  }
+
+
+}

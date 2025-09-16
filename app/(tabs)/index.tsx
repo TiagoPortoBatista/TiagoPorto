@@ -8,9 +8,8 @@ import * as ImagePicker from 'expo-image-picker';
 import EmojiPicker from "../components/EmojiPicker";
 import EmojiList from "../components/EmojiList";
 import EmojiSticker from "../components/EmojiSticker";
-
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 const PlaceholderImage = require('@/assets/images/mt07.jpg');
-
 export default function Index() {
   const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
   const [showAppOptions, setShowAppOptions] = useState<boolean>(false);

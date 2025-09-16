@@ -1,0 +1,161 @@
+public class Mamifero
+{
+	public String nome;
+	public String cor_olho;
+	public int idade;
+	public double altura;
+	
+	public Mamifero()
+	{
+		nome = "Mami";
+		cor_olho = "preto";
+		idade = 0;
+	}
+}
+
+
+public class Humano extends Mamifero
+{
+	public boolean casado;
+	
+	public Humano(String nome)
+	{
+		this.nome = nome;
+		cor_olho = "verde";
+		casado = false;
+	}
+}
+
+public class Deus
+{
+	public static void main(String[] args)
+	{
+		Mamifero MeuMami = new Mamifero();
+		CachorroHerdado MyDog = new CachorroHerdado();
+		HumanoHerdado Ze = new HumanoHerdado("Ze);
+		
+		System.out.println("*** DADOS MAMIFERO ***");
+		System.out.println("Nome: "+MeuMami.nome);
+		System.out.println("Altura: "+MeuMami.altura);
+		System.out.println("Olho: "+MeuMami.cor_olho);
+		System.out.println("");
+		
+		System.out.println("*** DADOS CACHORRO *** ");
+		System.out.println("Nome: "+MyDog.nome);
+		System.out.println("Altura: "+MyDog.altura );
+		System.out.println("Rabo: "+MyDog.tem_rabo );
+		System.out.println("" );
+		
+		System.out.println("*** DADOS HUMANO *** ");
+		System.out.println("Nome: "+Ze.nome);
+		System.out.println("Altura: "+Ze.altura );
+		System.out.println("Rabo: "+Ze.tem_rabo );
+		System.out.println("" );
+		
+	}
+}  
+
+public class Pai
+{
+	public String nome;
+	public int idade;
+	public double altura;
+	
+	public Pai(String nome, int idade, double altura)
+	{
+		this.nome = nome;
+		this.idade = idade;
+		this.altura = altura;
+	}
+	
+	  public void ExibirDados()
+	  {
+	  	System.out.println("Nome: "+nome);
+	  	System.out.println("Idade: "+idade);
+	  	System.out.println("Altura: "+altura);
+	  }
+	  
+	  public void Agir()
+	  {
+	  	System.out.println("Defender os netos");
+	  }
+}
+
+Public class Filho extends Pai 
+{
+	public String hobby;
+	
+	public Filho(String nome, int idade, double altura, String hobby)
+	{
+		this.nome = nome;
+		this.idade = idade;
+		this.altura = altura;
+		super(nome, idade, altura);
+		this.hobby = hobby;
+	}
+	 public void ExibirHobby()
+	{
+		System.out.println("Hobby: "+hobby):
+	}
+	  public void Agir()
+	{
+		System.out.println("Pedir $ para o pai");
+	}
+}
+
+public class Neto extends Filho
+{ 
+  public String talento;
+  
+  public Neto(String nome, int idade, double altura, String hobby, String talento)
+  {
+  	super(nome, idade, altura, hobby);
+  	this.talento = talento;
+  }
+  public void ExibirTalento()
+  {
+  	System.out.println("Talento: "+talento);
+  }
+   public void Agir()
+   {
+   	 System.out.println("Derrubar suco no sofa");
+   }
+}
+
+import java.util.Scanner;
+public class Poderoso
+{
+	 public static void main(String[] args)
+	 { 
+	   Scanner entrada = new Scanner(System.in);
+	   String nome;
+	   int idade;
+	   double altura;
+	   
+	   /* Utilizando a classe Pai */
+	   System.out.print("Digite o nome do pai:");
+	   nome = entrada.nextLine();
+	   System.out.print("Digite a idade do Pai:");
+	   idade = entrada.nextInt();
+	   System.out.print("Digite a altura do Pai: ");
+	   altura = entrada.nextDouble();
+	   
+	   Pai meupai = new Pai(nome,idade,altura);
+	   meupai.ExibirDados();
+	   meupai.Agir();
+	   
+	    entrada.nextline();
+	    /* Utilizando a classe Filho */
+	    System.out.print("Digite o nome do filho:");
+	   nome = entrada.nextLine();
+	   System.out.print("Digite a idade do filho:");
+	   idade = entrada.nextInt();
+	   System.out.print("Digite a altura do filho: ");
+	   altura = entrada.nextDouble();
+	   System.out.print("Digite o hobby do Filho:");
+	   hobby = entrada.nextLine();
+	   
+	   Filho meuFilho + new Filho(nome),idade,altura,hobby);
+	   
+	 }
+}
